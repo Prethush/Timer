@@ -43,13 +43,14 @@ class Countdown extends React.Component {
                     clearInterval(this.timer);
                 }
                     
+                      
                     this.setState({
                         seconds: totalSeconds % 60,
-                        minutes: Math.floor(totalSeconds / 60),
-                        hours: Math.floor(this.state.minutes / 60),
+                        minutes:  Math.floor(totalSeconds / 60),
+                        hours: Math.floor(minutes / 60)
                     })
-                   minutes %= 60;
-                   hours %= 60;
+                    minutes = minutes % 60;
+                    hours = hours % 60;
                 }      
            
         }, 1000);
