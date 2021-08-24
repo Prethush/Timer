@@ -56,7 +56,7 @@ class Stopwatch extends React.Component {
         let {ms, seconds, minutes, hours} = this.state;
         return (
            
-            <div className="bg-secondary text-white flex-custom p-4 relative inline-block">
+            <div className="bg-secondary text-white relative inline-block h-96 w-96 self-start p-8 rounded-md  border-2 border-white">
                 <h2 className="text-4xl text-center font-bold my-3">Stopwatch</h2>
 
                 <div className="flex my-6 justify-center text-4xl">
@@ -68,9 +68,9 @@ class Stopwatch extends React.Component {
                     <span className="ml-2">{seconds >= 10 ? seconds : "0" + seconds} : </span>
                     <span className="ml-2">{ms >= 10 ? ms : "0" + ms}</span>
                 </div>
-                <div className="flex justify-center">
+                <div className="flex justify-center mt-16">
                     
-                       <button className={this.state.timerStart ? "visible": "hidden"} onClick={() => {
+                       <button className={this.state.timerStart ? "visible bg-blue-500 text-white font-bold py-2 rounded-md px-6": "hidden"} onClick={() => {
                            this.startTimer();
                            this.setState({
                                timerStart: false,
@@ -81,7 +81,7 @@ class Stopwatch extends React.Component {
                        }}>Start</button> 
                     
                     
-                        <button className={this.state.timerStop ? "visible": "hidden"} onClick={() => {
+                        <button className={this.state.timerStop ? "visible bg-red-500 text-white font-bold py-2 rounded-md px-6": "hidden"} onClick={() => {
                             this.setState((prevState) => {
                                 return (
                                     {
@@ -92,10 +92,10 @@ class Stopwatch extends React.Component {
                             })
                         }}>Stop</button>
                     
-                            <button className={!this.state.timerStop && !this.state.timerStart? "visible": "hidden"} onClick={() => {
+                            <button className={!this.state.timerStop && !this.state.timerStart? "visible bg-blue-500 text-white font-bold py-2 rounded-md px-6": "hidden"} onClick={() => {
                                 this.setState((prevState) => ({isPaused: !prevState.isPaused, timerStop: !prevState.timerStop}))
                             }}>Resume</button>
-                            <button className={!this.state.timerStop && !this.state.timerStart? "visible": "hidden"} onClick={() => {
+                            <button className={!this.state.timerStop && !this.state.timerStart? "visible bg-blue-500 text-white font-bold py-2 rounded-md px-6 ml-4": "hidden"} onClick={() => {
                                 this.setState({
                                     ms: 0,
                                     seconds: 0,

@@ -9,7 +9,9 @@ module.exports = {
       } ,
       flex: {
         custom: "0 1 45%"
-      }
+      },
+
+     
     },
   },
   variants: {

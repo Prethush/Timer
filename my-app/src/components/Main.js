@@ -19,14 +19,14 @@ class Main extends React.Component {
         render() {
             return (
                 <main className="bg-primary h-screen">
-                    <h1 className="text-center text-4xl font-bold text-white py-12">🚀 Timers 🚀</h1>
-                    <section className="w-1/2 mx-auto bg-red-200">
+                    <h1 className="text-center text-5xl font-bold text-white py-12">🚀 Timers 🚀</h1>
+                    <section className="flex justify-between h-5/6 px-80 py-12">
                         {
-                            !this.state.stopwatch ? <button onClick={() => this.setState({stopwatch: true})}>Show Stopwatch</button> : < Stopwatch {...this.state} changeState={this.changeState}/>
+                            !this.state.stopwatch ? <button className="self-start bg-green-500 p-2 rounded-md text-white font-bold" onClick={() => this.setState({stopwatch: true})}>Show Stopwatch</button> : < Stopwatch {...this.state} changeState={this.changeState}/>
                            
                         }
                         {
-                             !this.state.countdown ?  <button onClick={() => this.setState({countdown: true})}>Show Countdown</button> : < Countdown {...this.state} changeState={this.changeState}/>
+                             !this.state.countdown ?  <button className="self-start bg-green-500 p-2 rounded-md text-white font-bold" onClick={() => this.setState({countdown: true})}>Show Countdown</button> : < Countdown {...this.state} changeState={this.changeState}/>
                         }
                        
                     </section>
